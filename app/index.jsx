@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { View, Text, TextInput, Button, FlatList, StyleSheet } from 'react-native';
+import { View, Text, TextInput, Button, FlatList, TouchableOpacity } from 'react-native';
+import styles from './styles/global';
 
 const App = () => {
   const [task, setTask] = useState('');
@@ -10,6 +11,10 @@ const App = () => {
       setTasks([...tasks, { id: Date.now().toString(), text: task }]);
       setTask('');
     }
+  };
+
+  const deleteTask = (id) => {
+    setTasks(tasks.filter((task) => task.id !== id));
   };
 
   return (
@@ -25,33 +30,20 @@ const App = () => {
       <FlatList
         data={tasks}
         keyExtractor={(item) => item.id}
-        renderItem={({ item }) => <Text style={styles.task}>{item.text}</Text>}
+        renderItem={({ item }) => (
+          <View style={styles.taskRow}>
+            <Text style={styles.task}>{item.text}</Text>
+            <TouchableOpacity
+              style={styles.deleteButton}
+              onPress={() => deleteTask(item.id)}
+            >
+              <Text style={styles.deleteText}>Delete</Text>
+            </TouchableOpacity>
+          </View>
+        )}
       />
     </View>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    padding: 40,
-  },
-  title: {
-    fontSize: 24,
-    fontWeight: 'bold',
-    marginBottom: 16,
-  },
-  input: {
-    borderWidth: 1,
-    borderColor: '#ccc',
-    padding: 10,
-    marginBottom: 10,
-    borderRadius: 6,
-  },
-  task: {
-    fontSize: 18,
-    paddingVertical: 8,
-  },
-});
 
 export default App;
