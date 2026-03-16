@@ -11,7 +11,7 @@ const App = () => {
 
   const addTask = () => {
     if (task.trim()) {
-      setTasks([...tasks, { id: Date.now().toString(), text: task }]);
+      setTasks([...tasks, { id: Date.now().toString(), text: task, createdAt: new Date().toLocaleString() }]);
       setTask('');
     }
   };
@@ -50,7 +50,7 @@ const App = () => {
             <Text style={styles.task}>{item.text}</Text>
             <TouchableOpacity
               style={styles.detailsButton}
-              onPress={() => router.push('/details')}>
+              onPress={() => router.push({ pathname: '/details', params: { text: item.text, createdAt: item.createdAt } })}>
               <Ionicons name="information-circle-outline" size={24} color="#000" />
             </TouchableOpacity>
             <TouchableOpacity

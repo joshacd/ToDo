@@ -44,6 +44,17 @@ const styles = StyleSheet.create({
 	color: '#fff',
 	fontWeight: 'bold',
   },
+  detailLabel: {
+	fontSize: 14,
+	fontWeight: 'bold',
+	color: '#888',
+	marginTop: 16,
+	textTransform: 'uppercase',
+  },
+  detailText: {
+	fontSize: 18,
+	marginTop: 4,
+  },
 });
 
 export default styles;
