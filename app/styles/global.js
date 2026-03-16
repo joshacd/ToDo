@@ -29,11 +29,17 @@ const styles = StyleSheet.create({
 	paddingVertical: 8,
   },
   deleteButton: {
-	backgroundColor: '#e53935',
-	paddingHorizontal: 12,
-	paddingVertical: 6,
+	backgroundColor: '#0073DB',
+	paddingHorizontal: 8,
+	paddingVertical: 4,
 	borderRadius: 6,
   },
+  deleteButton: {
+	  backgroundColor: '#e53935',
+	  paddingHorizontal: 8,
+	  paddingVertical: 4,
+	  borderRadius: 6,
+	},
   deleteText: {
 	color: '#fff',
 	fontWeight: 'bold',
