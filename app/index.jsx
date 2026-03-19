@@ -1,6 +1,11 @@
+// ToDo: app/index.jsx
+// Created By: Josha Chapman-Dodson
+// Date Created: 3/13/26
+
 import React, { useState } from 'react';
 import { Stack, useRouter } from "expo-router";
 import { View, Text, TextInput, Button, FlatList, TouchableOpacity, Pressable } from 'react-native';
+import Checkbox from "expo-checkbox";
 import { Ionicons } from '@expo/vector-icons';
 import styles from './styles/global';
 
@@ -8,6 +13,7 @@ const App = () => {
   const router = useRouter();
   const [task, setTask] = useState('');
   const [tasks, setTasks] = useState([]);
+  const [checked, setChecked] = useState(false);
 
   const addTask = () => {
     if (task.trim()) {
@@ -47,6 +53,7 @@ const App = () => {
         keyExtractor={(item) => item.id}
         renderItem={({ item }) => (
           <View style={styles.taskRow}>
+            <Checkbox value={checked} onValueChange={setChecked} color={checked ? "#4630EB" : undefined} />
             <Text style={styles.task}>{item.text}</Text>
             <TouchableOpacity
               style={styles.detailsButton}

@@ -1,3 +1,7 @@
+// ToDo: app/_layout.jsx
+// Created By: Josha Chapman-Dodson
+// Date Created: 3/13/26
+
 import { Stack } from "expo-router";
 
 export default function RootLayout() {

@@ -1,9 +1,16 @@
+// ToDo: app/details.jsx
+// Created By: Josha Chapman-Dodson
+// Date Created: 3/13/26
+
+
 import { View, Text } from 'react-native';
 import { useLocalSearchParams } from 'expo-router';
 import styles from './styles/global';
 
 export default function Details() {
-  const { text, createdAt } = useLocalSearchParams();
+  const { text, createdAt, checked } = useLocalSearchParams();
+
+  if 
 
   return (
 	<View style={styles.container}>
