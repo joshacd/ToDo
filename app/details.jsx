@@ -10,7 +10,7 @@ import styles from './styles/global';
 export default function Details() {
   const { text, createdAt, checked } = useLocalSearchParams();
 
-  if 
+  if (!text) return null;
 
   return (
 	<View style={styles.container}>
@@ -19,6 +19,8 @@ export default function Details() {
 	  <Text style={styles.detailText}>{text}</Text>
 	  <Text style={styles.detailLabel}>Time Added:</Text>
 	  <Text style={styles.detailText}>{createdAt}</Text>
+	  <Text style={styles.detailLabel}>Status:</Text>
+	  <Text style={styles.detailText}>{checked === 'true' ? 'Completed' : 'Incomplete'}</Text>
 	</View>
   );
 }
