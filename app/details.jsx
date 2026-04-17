@@ -9,12 +9,8 @@ import styles from './styles/global';
 
 export default function Details() {
   const { text, createdAt, checked } = useLocalSearchParams();
-<<<<<<< HEAD
- 
-=======
 
   if 
->>>>>>> main
 
   return (
 	<View style={styles.container}>
