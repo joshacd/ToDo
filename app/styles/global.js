@@ -1,3 +1,7 @@
+// ToDo: styles/global.js
+// Created By: Josha Chapman-Dodson
+// Date Created: 3/13/26
+
 import { StyleSheet } from 'react-native';
 
 const styles = StyleSheet.create({
